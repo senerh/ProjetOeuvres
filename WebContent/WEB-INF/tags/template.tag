@@ -11,6 +11,7 @@
 <title>Projet Oeuvres - <jsp:invoke fragment="title" /></title>
 <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link rel="icon" href="images/favicon.ico" />
 </head>
 <body>
     <div class="container">
@@ -38,13 +39,12 @@
                     </ul>
                 </div>
             </div>
-            <!-- /.container -->
         </nav>
         <div id="content">
             <jsp:invoke fragment="content" />
         </div>
         <footer class="footer">
-            <strong>Projet Oeuvres</strong>, le site du TURFU !!
+            <strong>Projet Oeuvres</strong>
         </footer>
     </div>
 
