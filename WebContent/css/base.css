@@ -27,6 +27,10 @@ a:link {
     text-decoration: none;
 }
 
+a:link:hover {
+    text-decoration: none;
+}
+
 .BackGroundGris {
     background-color: #cecece;
 }
@@ -117,6 +121,7 @@ a:link {
     color: #ffffff;
     transition-property: color;
     transition-duration: 0.3s;
+    text-decoration: none;
 }
 
 .ulmenu p {
@@ -140,6 +145,7 @@ a:link {
 #pagefooter {
     height: 10%;
     width: 100%;
+    bottom: 0;
 }
 
 @media screen and (max-width: 800px) {
