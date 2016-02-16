@@ -18,3 +18,5 @@ hs_err_pid*
 
 ProjetOeuvres.iml
 .idea/
+WebContent/WEB-INF/web.xml
+

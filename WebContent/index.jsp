@@ -1,8 +1,16 @@
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib prefix="t" tagdir="/WEB-INF/tags"%>
-<t:template>
-    <jsp:attribute name="title">Accueil</jsp:attribute>
-    <jsp:attribute name="content">
-        <h2>Gestion de l'exposition 2016</h2>
-    </jsp:attribute>
-</t:template>
+<%@page language="java" contentType="text/html" pageEncoding="UTF-8"%>
+<%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
+
+<t:layout>
+	<jsp:attribute name="stylesheet">
+	</jsp:attribute>
+	<jsp:attribute name="headeTitle">
+		Accueil
+	</jsp:attribute>
+
+	<jsp:attribute name="body">
+
+
+	</jsp:attribute>
+
+</t:layout>
