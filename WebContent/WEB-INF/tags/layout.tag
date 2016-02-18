@@ -43,11 +43,6 @@
                         <p>Liste</p>
                     </a>
                 </li>
-                <li>
-                    <a href="javascript:fermer()">
-                        <p>Quitter</p>
-                    </a>
-                </li>
             </ul>
         </div>
 
