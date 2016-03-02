@@ -11,16 +11,16 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-        <link href="../../css/base.css" rel="stylesheet" type="text/css">
-        <link href="../../css/base.css" rel="stylesheet" media="screen and (max-width: 800px)">
-        <link href="../../css/base.css" rel="stylesheet" media="screen and (max-height: 500px)">
-        <link href="../../lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="icon" href="../../images/favicon.ico" />
+        <link href="<%=request.getContextPath()%>/css/base.css" rel="stylesheet" type="text/css">
+        <link href="<%=request.getContextPath()%>/css/base.css" rel="stylesheet" media="screen and (max-width: 800px)">
+        <link href="<%=request.getContextPath()%>/css/base.css" rel="stylesheet" media="screen and (max-height: 500px)">
+        <link href="<%=request.getContextPath()%>/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" />
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css">
-        <script src="../../lib/jquery/jquery-1.12.0.min.js"></script>
+        <script src="<%=request.getContextPath()%>/lib/jquery/jquery-1.12.0.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-        <script type="text/javascript" src="../../js/fonctControle.js"></script>
+        <script type="text/javascript" src="<%=request.getContextPath()%>/js/fonctControle.js"></script>
 
         <jsp:invoke fragment="stylesheet"/>
 
