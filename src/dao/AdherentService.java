@@ -47,8 +47,6 @@ public class AdherentService {
             DialogueBd unDialogueBd = DialogueBd.getInstance();
             rs = DialogueBd.lecture(mysql);
 
-            System.out.println(rs);
-
             while (index < rs.size()) {
                 Adherent unA = new Adherent();
 
