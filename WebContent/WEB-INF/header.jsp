@@ -1,5 +1,5 @@
 <div id="logo" class="NoMargin">
-    <img src="images/logoRepartie.png">
+    <img src="../../images/logoRepartie.png">
 </div>
 
 <div class="divTitle NoMargin">

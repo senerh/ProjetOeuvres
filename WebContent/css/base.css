@@ -20,7 +20,7 @@
 
 html {
     height: 100%;
-    max-width: 100%;
+    width: 100%;
 }
 
 a:link {
@@ -71,6 +71,8 @@ a:link:hover {
 #logo img {
     max-height: 70%;
     max-width: 70%;
+    min-height: 20px;
+    min-width: 20px;
     padding-left: 20%;
     padding-top: 10%;
 }
@@ -87,11 +89,14 @@ a:link:hover {
     color: #007cc3;
     text-align: center;
     font-size: 40px;
+    padding-top: 3%;
+    font-weight: 900;
 }
 
 #menu {
     float: left;
     width: 15%;
+    min-width: 6em;
     height: 70%;
     background-color: #cecece;
     border-right: 1px solid #ffffff;
@@ -137,19 +142,45 @@ a:link:hover {
     font-size: 20px;
 }
 
+#tabAdherents_wrapper .row {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#tabProprietaires_wrapper .row {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
 #body {
     height: 70%;
     width: calc(85% - 1px);
+    max-width: calc(85% - 4em);
     float: right;
 }
 
 #pagefooter {
+    position: relative;
+    margin-top: -10%;
     height: 10%;
-    width: 100%;
-    bottom: 0;
+    clear:both;
 }
 
 @media screen and (max-width: 800px) {
+    .headerTitle {
+        font-size:20px;
+    }
+
+    .ulmenu li {
+        height: 7%;
+    }
+
+    .ulmenu p {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-height: 500px) {
     .headerTitle {
         font-size:20px;
     }
