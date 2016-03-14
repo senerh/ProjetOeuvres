@@ -25,7 +25,7 @@
                 <tr>
                     <td>${reservation.adherent.nomAdherent}</td>
                     <td>${reservation.oeuvrevente.titreOeuvrevente}</td>
-                    <td>${reservation.date}</td>
+                    <td><fmt:formatDate value="${reservation.date}" pattern="dd/MM/yyyy" /></td>
                     <td>
                         <a href="
                         <c:url value="/reservation/editer">

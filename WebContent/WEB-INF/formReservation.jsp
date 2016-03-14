@@ -24,7 +24,7 @@
     <div class="form-group">
         <label class="control-label col-sm-2" for="date">Date</label>
         <div class="col-sm-10">
-            <input type="text" class="form-control" id="date" name="date" value="<c:out value="${reservation.date}"/>" size="20" maxlength="60" placeholder="Entrer date" /> <span>${form.erreurs['date']}</span>
+            <input type="text" class="form-control" id="date" name="date" value="<fmt:formatDate value="${reservation.date}" pattern="dd/MM/yyyy" />" size="20" maxlength="60" placeholder="Entrer date" /> <span>${form.erreurs['date']}</span>
         </div>
     </div>
 
