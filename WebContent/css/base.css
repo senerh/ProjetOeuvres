@@ -124,6 +124,10 @@ a:link:hover {
     border: 0;
 }
 
+.navbar-collapse{
+    border: 0;
+}
+
 .navbar-collapse a{
     font-family: Znikomit;
 }
@@ -183,7 +187,7 @@ a:link:hover {
 
 @media screen and (max-width: 800px) {
     .headerTitle {
-        font-size:15px;
+        font-size:20px;
     }
 
     #tabProjet_wrapper{
@@ -193,10 +197,18 @@ a:link:hover {
     #pageheader {
         height: 15%;
     }
+
+    .titrePage{
+        font-size: 17px;
+    }
 }
 
 @media screen and (max-height: 500px) {
     .headerTitle {
-        font-size:15px;
+        font-size:20px;
+    }
+
+    .titrePage{
+        font-size: 17px;
     }
 }
