@@ -26,7 +26,15 @@
                     <td>${reservation.adherent.nomAdherent}</td>
                     <td>${reservation.oeuvrevente.titreOeuvrevente}</td>
                     <td>${reservation.date}</td>
-                    <td></td>
+                    <td>
+                        <a href="
+                        <c:url value="/reservation/editer">
+                        <c:param name="id-oeuvrevente" value="${ reservation.oeuvrevente.idOeuvrevente }" />
+                        <c:param name="id-adherent" value="${ reservation.adherent.idAdherent }" />
+                        </c:url>">
+                                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

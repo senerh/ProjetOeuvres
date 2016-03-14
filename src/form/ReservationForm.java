@@ -1,5 +1,7 @@
 package form;
 
+import dao.AdherentService;
+import dao.OeuvreVenteService;
 import dao.ReservationService;
 import meserreurs.MonException;
 import metier.Adherent;
@@ -34,6 +36,14 @@ public class ReservationForm {
     }
 
     public Reservation ajouterReservation(HttpServletRequest request ) {
+        return insertOrUpdateReservation(request, false);
+    }
+    
+    public Reservation updateReservation(HttpServletRequest request ) {
+        return insertOrUpdateReservation(request, true);
+    }
+    
+    private Reservation insertOrUpdateReservation(HttpServletRequest request, boolean isUpdate) {
         String idAdherent = getValeurChamp(request, CHAMP_LISTE_ADHERENT);
         String idOeuvreVente = getValeurChamp(request, CHAMP_LISTE_OEUVREVENTE);
         String date = getValeurChamp(request, CHAMP_DATE);
@@ -41,13 +51,24 @@ public class ReservationForm {
 
         Reservation reservation = new Reservation();
 
-        Adherent adherent;
+        Adherent adherent = null;
         HttpSession session = request.getSession();
-        adherent = ((Map<String, Adherent>) session.getAttribute( SESSION_ADHERENT )).get(idAdherent);
+        AdherentService adherentService = new AdherentService();
+        OeuvreVenteService oeuvreVenteService = new OeuvreVenteService();
+        try {
+            adherent = adherentService.consulterAdherent(Integer.parseInt(idAdherent));
+        } catch (NumberFormatException | MonException e2) {
+            // TODO Auto-generated catch block
+            e2.printStackTrace();
+        }
         reservation.setAdherent(adherent);
 
-        Oeuvrevente oeuvreVente;
-        oeuvreVente = ((Map<String, Oeuvrevente>) session.getAttribute( SESSION_OEUVREVENTE )).get(idOeuvreVente);
+        Oeuvrevente oeuvreVente = null;
+        try {
+            oeuvreVente = oeuvreVenteService.consulterOeuvreVente(Integer.parseInt(idOeuvreVente));
+        } catch (NumberFormatException | MonException e1) {
+            e1.printStackTrace();
+        }
         reservation.setOeuvrevente(oeuvreVente);
 
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -68,11 +89,15 @@ public class ReservationForm {
         ReservationService reservationService = new ReservationService();
         if ( erreurs.isEmpty() ) {
             try {
-                reservationService.insertReservation(reservation);
+                if (isUpdate) {
+                    reservationService.updateReservation(reservation);
+                } else {
+                    reservationService.insertReservation(reservation);
+                }
             } catch (MonException e) {
                 e.printStackTrace();
             }
-            resultat = "Succès de l'ajout de l'oeuvre.";
+            resultat = "Succès de l'ajout de la reservation.";
         } else {
             resultat = "Échec de l'ajout.";
         }

@@ -14,8 +14,8 @@ import java.util.List;
 
 public class ReservationService {
 
-    public Reservation consulterReservation(int id) throws MonException {
-        String mysql = "select * from reservation where id_reservation=" + id;
+    public Reservation consulterReservation(int idOeuvrevente, int idAdherent) throws MonException {
+        String mysql = "select * from reservation where id_oeuvrevente=" + idOeuvrevente + " and id_adherent=" + idAdherent + ";";
         List<Reservation> uneReservation = consulterReservations(mysql);
         if (uneReservation.isEmpty())
             return null;
@@ -94,6 +94,32 @@ public class ReservationService {
                     + ",(" + mysql2 + "))";
 
             unDialogueBd.insertionBD(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
+    
+    public void updateReservation(Reservation reservation) throws MonException {
+
+        String mysql;
+        
+        int idOeuvrevente = reservation.getOeuvrevente().getIdOeuvrevente();
+        int idAdherent = reservation.getAdherent().getIdAdherent();
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+
+        java.sql.Date sqlDate = new java.sql.Date(reservation.getDate().getTime());
+
+        try {
+            mysql = "update reservation set "
+                    + "date_reservation = '" + sqlDate + "', "
+                    + "id_adherent = " + idAdherent + ", "
+                    + "id_oeuvrevente = " + idOeuvrevente + " "
+                    + "where id_adherent = " + idAdherent + " and id_oeuvrevente = " + idOeuvrevente + ";";
+            
+            System.out.println(mysql);
+
+            unDialogueBd.execute(mysql);
         } catch (MonException e) {
             throw e;
         }
