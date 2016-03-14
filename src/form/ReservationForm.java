@@ -54,7 +54,6 @@ public class ReservationForm {
         Date realDate = null;
         try {
             realDate = formatter.parse(date);
-            System.out.print(realDate);
         } catch (ParseException e) {
             e.printStackTrace();
         }

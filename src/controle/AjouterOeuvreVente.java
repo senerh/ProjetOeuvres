@@ -58,7 +58,6 @@ public class AjouterOeuvreVente extends HttpServlet {
         req.setAttribute(ATT_OEUVREVENTE, oeuvrevente);
 
         resp.sendRedirect("/oeuvre/vente");
-
     }
 }
 
