@@ -99,7 +99,7 @@ public class ReservationService {
         }
     }
     
-    public void updateReservation(Reservation reservation) throws MonException {
+    public void updateReservation(Reservation reservation, int updatedIdAdherent, int updatedIdOeuvrevente) throws MonException {
 
         String mysql;
         
@@ -115,9 +115,7 @@ public class ReservationService {
                     + "date_reservation = '" + sqlDate + "', "
                     + "id_adherent = " + idAdherent + ", "
                     + "id_oeuvrevente = " + idOeuvrevente + " "
-                    + "where id_adherent = " + idAdherent + " and id_oeuvrevente = " + idOeuvrevente + ";";
-            
-            System.out.println(mysql);
+                    + "where id_adherent = " + updatedIdAdherent + " and id_oeuvrevente = " + updatedIdOeuvrevente + ";";
 
             unDialogueBd.execute(mysql);
         } catch (MonException e) {

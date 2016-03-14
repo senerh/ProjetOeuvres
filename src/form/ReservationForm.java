@@ -21,6 +21,8 @@ public class ReservationForm {
     private static final String CHAMP_LISTE_ADHERENT  = "adherent";
     private static final String CHAMP_LISTE_OEUVREVENTE   = "oeuvrevente";
     private static final String CHAMP_DATE   = "date";
+    private static final String CHAMP_UPDATED_ADHERENT   = "id-adherent-origin";
+    private static final String CHAMP_UPDATED_OEUVREVENTE = "id-oeuvrevente-origin";
     private static final String SESSION_ADHERENT    = "adherents";
     private static final String SESSION_OEUVREVENTE    = "oeuvreventes";
 
@@ -36,18 +38,19 @@ public class ReservationForm {
     }
 
     public Reservation ajouterReservation(HttpServletRequest request ) {
-        return insertOrUpdateReservation(request, false);
+        return insertOrUpdateReservation(request, -1, -1);
     }
     
-    public Reservation updateReservation(HttpServletRequest request ) {
-        return insertOrUpdateReservation(request, true);
+    public Reservation updateReservation(HttpServletRequest request) {
+        int updatedIdAdherent = Integer.parseInt(getValeurChamp(request, CHAMP_UPDATED_ADHERENT));
+        int updatedIdOeuvrevente = Integer.parseInt(getValeurChamp(request, CHAMP_UPDATED_OEUVREVENTE));
+        return insertOrUpdateReservation(request, updatedIdAdherent, updatedIdOeuvrevente);
     }
     
-    private Reservation insertOrUpdateReservation(HttpServletRequest request, boolean isUpdate) {
+    private Reservation insertOrUpdateReservation(HttpServletRequest request, int updatedIdAdherent, int updatedIdOeuvrevente) {
         String idAdherent = getValeurChamp(request, CHAMP_LISTE_ADHERENT);
         String idOeuvreVente = getValeurChamp(request, CHAMP_LISTE_OEUVREVENTE);
         String date = getValeurChamp(request, CHAMP_DATE);
-
 
         Reservation reservation = new Reservation();
 
@@ -89,10 +92,10 @@ public class ReservationForm {
         ReservationService reservationService = new ReservationService();
         if ( erreurs.isEmpty() ) {
             try {
-                if (isUpdate) {
-                    reservationService.updateReservation(reservation);
-                } else {
+                if (updatedIdAdherent < 0 || updatedIdOeuvrevente < 0) {
                     reservationService.insertReservation(reservation);
+                } else {
+                    reservationService.updateReservation(reservation, updatedIdAdherent, updatedIdOeuvrevente);
                 }
             } catch (MonException e) {
                 e.printStackTrace();

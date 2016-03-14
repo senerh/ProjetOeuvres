@@ -33,5 +33,9 @@
             <button type="submit" class="btn btn-default">Valider</button>
         </div>
     </div>
+    
+    <input type="hidden" id="id-adherent-origin" name="id-adherent-origin" value="<c:out value="${reservation.adherent.idAdherent}"/>" />
+    <input type="hidden" id="id-oeuvrevente-origin" name="id-oeuvrevente-origin" value="<c:out value="${reservation.oeuvrevente.idOeuvrevente}"/>" />
+    
     <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
 </form>
