@@ -7,7 +7,7 @@
 
 <t:layout>
 	<jsp:attribute name="headTitle">
-		Liste Propriétaire
+		Liste des propriétaires
 	</jsp:attribute>
 	<jsp:attribute name="body">
         <h1 class="titrePage">Liste des propriétaires</h1>

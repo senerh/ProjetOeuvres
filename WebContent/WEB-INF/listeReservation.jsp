@@ -7,7 +7,7 @@
 
 <t:layout>
 	<jsp:attribute name="headTitle">
-		Liste reservation
+		Liste des reservations
 	</jsp:attribute>
 	<jsp:attribute name="body">
         <h1 class="titrePage">Liste des reservations</h1>

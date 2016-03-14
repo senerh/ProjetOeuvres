@@ -7,7 +7,7 @@
 
 <t:layout>
 	<jsp:attribute name="headTitle">
-		Liste Oeuvre Vente
+		Liste des Oeuvres
 	</jsp:attribute>
 	<jsp:attribute name="body">
         <h1 class="titrePage">Liste des oeuvres en vente</h1>

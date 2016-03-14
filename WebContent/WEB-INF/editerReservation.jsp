@@ -11,7 +11,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="headTitle">
-		Ajout Réservation
+		Editer Réservation
 	</jsp:attribute>
 
 	<jsp:attribute name="body">

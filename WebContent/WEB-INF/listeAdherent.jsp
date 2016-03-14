@@ -7,7 +7,7 @@
 
 <t:layout>
 	<jsp:attribute name="headTitle">
-		Liste Adhérents
+		Liste des Adhérents
 	</jsp:attribute>
 	<jsp:attribute name="body">
 		<h1 class="titrePage">Liste des adhérents</h1>

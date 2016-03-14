@@ -10,7 +10,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="headTitle">
-		Ajout Adhérent
+		Ajout Propriétaire
 	</jsp:attribute>
 
 	<jsp:attribute name="body">

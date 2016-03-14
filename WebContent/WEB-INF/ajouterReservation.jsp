@@ -9,7 +9,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="headTitle">
-		Ajout Adhérent
+		Ajout Réservation
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
