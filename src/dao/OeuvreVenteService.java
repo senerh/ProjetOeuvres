@@ -43,7 +43,7 @@ public class OeuvreVenteService {
                 oeuvrevente.setIdOeuvrevente(Integer.parseInt(rs.get(index).toString()));
                 oeuvrevente.setTitreOeuvrevente(rs.get(index + 1).toString());
                 oeuvrevente.setEtatOeuvrevente(rs.get(index + 2).toString());
-                oeuvrevente.setPrixOeuvrevente(Integer.parseInt(rs.get(index + 3).toString()));
+                oeuvrevente.setPrixOeuvrevente(Float.parseFloat(rs.get(index + 3).toString()));
 
                 int idProprietaire = Integer.parseInt(rs.get(index + 4).toString());
                 Proprietaire proprietaire = proprietaireService.consulterProprietaire(idProprietaire);
@@ -60,4 +60,56 @@ public class OeuvreVenteService {
     }
 
 
+    public void insertOeuvreVente(Oeuvrevente oeuvrevente) throws MonException {
+        String mysql;
+
+        String mysql1 = "select id_proprietaire from proprietaire where id_proprietaire="
+                + oeuvrevente.getProprietaire().getIdProprietaire();
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "insert into oeuvrevente  (titre_oeuvrevente, etat_oeuvrevente, prix_oeuvrevente, id_proprietaire)  " + "values " +
+                    "('" + oeuvrevente.getTitreOeuvrevente() + "'"
+                    + ",'" + oeuvrevente.getEtatOeuvrevente() + "'"
+                    + ",'" + oeuvrevente.getPrixOeuvrevente() + "'"
+                    + ",(" + mysql1 + "))";
+
+            unDialogueBd.insertionBD(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
+
+    public void editOeuvreVente(Oeuvrevente oeuvrevente) throws MonException {
+        String mysql;
+
+        String mysql1 = "select id_proprietaire from proprietaire where id_proprietaire="
+                + oeuvrevente.getProprietaire().getIdProprietaire();
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "UPDATE oeuvrevente SET " +
+                    "titre_oeuvrevente ='" + oeuvrevente.getTitreOeuvrevente()+"', " +
+                    "etat_oeuvrevente ='" + oeuvrevente.getEtatOeuvrevente()+"', " +
+                    "prix_oeuvrevente ='" + oeuvrevente.getPrixOeuvrevente()+"', " +
+                    "id_proprietaire = (" + mysql1+") WHERE id_oeuvrevente =" + oeuvrevente.getIdOeuvrevente();
+
+                    unDialogueBd.execute(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
+
+
+    public void supprimerOeuvreVente(int idOeuvreVente) throws MonException {
+        String mysql;
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "DELETE FROM oeuvrevente WHERE id_oeuvrevente = " + idOeuvreVente;
+            unDialogueBd.execute(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
 }

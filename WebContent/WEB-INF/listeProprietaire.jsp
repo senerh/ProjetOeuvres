@@ -16,14 +16,21 @@
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Prenom</th>
+                <th>Action</th>
             </tr>
             </thead>
             <tbody>
+            ${ message }
             <c:forEach items="${requestScope.proprietaires}" var="propritaire">
                 <tr>
                     <td>${propritaire.idProprietaire}</td>
                     <td>${propritaire.nomProprietaire}</td>
                     <td>${propritaire.prenomProprietaire}</td>
+                    <td>
+                        <a href="<c:url value="/proprietaire/supprimer"><c:param name="id" value="${ propritaire.idProprietaire }" /></c:url>">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        </a>
+                    </td>
                 </tr>
             </c:forEach>
             </tbody>

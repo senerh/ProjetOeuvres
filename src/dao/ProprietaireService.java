@@ -1,7 +1,6 @@
 package dao;
 
 import meserreurs.MonException;
-import metier.Adherent;
 import metier.Proprietaire;
 import persistance.DialogueBd;
 
@@ -10,6 +9,19 @@ import java.util.List;
 
 
 public class ProprietaireService {
+
+    public void supprimerProprietaire(int idProprietaire) throws MonException {
+        String mysql;
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "DELETE FROM proprietaire WHERE id_proprietaire = " + idProprietaire;
+            unDialogueBd.execute(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
+
 
     public Proprietaire consulterProprietaire(int id) throws MonException {
         String mysql = "select * from proprietaire where id_proprietaire=" + id;
@@ -35,8 +47,6 @@ public class ProprietaireService {
         try {
             rs = DialogueBd.lecture(mysql);
 
-            System.out.println(rs);
-
             while (index < rs.size()) {
                 Proprietaire proprietaire = new Proprietaire();
 
@@ -51,6 +61,22 @@ public class ProprietaireService {
             return proprietaires;
         } catch (Exception exc) {
             throw new MonException(exc.getMessage(), "systeme");
+        }
+    }
+
+
+    public void insertProprietaire(Proprietaire proprietaire) throws MonException {
+        String mysql;
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "insert into proprietaire  (nom_proprietaire, prenom_proprietaire)  " + "values ('"
+                    + proprietaire.getNomProprietaire();
+            mysql += "'" + ",'" + proprietaire.getPrenomProprietaire() + "')";
+
+            unDialogueBd.insertionBD(mysql);
+        } catch (MonException e) {
+            throw e;
         }
     }
 }

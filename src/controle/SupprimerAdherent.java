@@ -30,7 +30,6 @@ public class SupprimerAdherent extends HttpServlet {
             e.printStackTrace();
         }
 
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/adherent/");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/adherent/");
     }
 }

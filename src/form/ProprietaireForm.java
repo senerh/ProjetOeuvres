@@ -1,19 +1,18 @@
 package form;
 
-import dao.AdherentService;
+import dao.ProprietaireService;
 import meserreurs.MonException;
-import metier.Adherent;
+import metier.Proprietaire;
 
 import java.util.HashMap;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class AdherentForm {
+public class ProprietaireForm {
 
     private static final String CHAMP_NOM  = "nom";
     private static final String CHAMP_PRENOM   = "prenom";
-    private static final String CHAMP_VILLE   = "ville";
     private String resultat;
     private Map<String, String> erreurs = new HashMap<String, String>();
 
@@ -25,68 +24,47 @@ public class AdherentForm {
         return erreurs;
     }
 
-    public Adherent ajouterAdherent(HttpServletRequest request, int idAdherent) {
+    public Proprietaire ajouterProprietaire(HttpServletRequest request ) {
         String nom = getValeurChamp( request, CHAMP_NOM );
         String prenom = getValeurChamp( request, CHAMP_PRENOM );
-        String ville = getValeurChamp( request, CHAMP_VILLE );
 
-        Adherent adherent = new Adherent();
-
-        adherent.setIdAdherent(idAdherent);
+        Proprietaire proprietaire = new Proprietaire();
 
         try {
             validationNom(nom);
         } catch ( Exception e ) {
             setErreur( CHAMP_NOM, e.getMessage());
         }
-        adherent.setNomAdherent( nom );
+        proprietaire.setNomProprietaire(nom);
 
         try {
             validationPrenom(prenom);
         } catch ( Exception e ) {
             setErreur( CHAMP_PRENOM, e.getMessage());
         }
-        adherent.setPrenomAdherent(prenom);
-
-        try {
-            validationVille(ville);
-        } catch ( Exception e ) {
-            setErreur(CHAMP_VILLE, e.getMessage());
-        }
-        adherent.setVilleAdherent(ville);
+        proprietaire.setPrenomProprietaire(prenom);
 
         if ( erreurs.isEmpty() ) {
-            AdherentService adherentService = new AdherentService();
+            ProprietaireService proprietaireService = new ProprietaireService();
 
             try {
-
-                if (adherent.getIdAdherent() < 0)
-                    adherentService.insertAdherent(adherent);
-                else
-                    adherentService.editAdherent(adherent);
-
+                proprietaireService.insertProprietaire(proprietaire);
             } catch (MonException e) {
                 e.printStackTrace();
             }
 
-            resultat = "Succès de l'ajout de l'adherent.";
+            resultat = "Succès de l'ajout du proprietaire.";
         } else {
             resultat = "Échec de l'ajout.";
         }
 
-        return adherent;
+        return proprietaire;
     }
 
 
     private void validationPrenom( String prenom ) throws Exception {
         if ( prenom != null && prenom.length() < 3 ) {
             throw new Exception( "Le prenom doit contenir au moins 3 caractères." );
-        }
-    }
-
-    private void validationVille( String ville) throws Exception {
-        if ( ville != null && ville.length() < 3 ) {
-            throw new Exception( "la ville doit contenir au moins 3 caractères." );
         }
     }
 

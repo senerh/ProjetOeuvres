@@ -7,31 +7,30 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
 import dao.AdherentService;
-import dao.ProprietaireService;
+import dao.OeuvreVenteService;
 import meserreurs.*;
 
-@WebServlet("/proprietaire/" )
-public class ListeProprietaire extends HttpServlet {
+@WebServlet("/oeuvre/vente/supprimer" )
+public class SupprimerOeuvreVente extends HttpServlet {
 
-    public ListeProprietaire() {
+    public SupprimerOeuvreVente() {
         super();
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        ProprietaireService proprietaireService = new ProprietaireService();
+
+        int idOeuvreVente = Integer.parseInt(req.getParameter("id"));
+        OeuvreVenteService oeuvreVenteService = new OeuvreVenteService();
+
         try {
-            req.setAttribute("proprietaires", proprietaireService.consulterListeProprietaire());
+            oeuvreVenteService.supprimerOeuvreVente(idOeuvreVente);
         } catch (MonException e) {
             e.printStackTrace();
         }
 
-        System.out.print(req.getAttribute("message"));
-
-        RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/listeProprietaire.jsp");
-        dispatcher.forward(req, resp);
+        resp.sendRedirect("/adherent/");
     }
 }

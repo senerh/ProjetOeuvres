@@ -1,1 +1,1 @@
-<p class="NoMargin DBlock TCenter">Realise par Hakan et Nathan</p>
+<p class="NoMargin DBlock TCenter">Réalisé par Hakan et Nathan</p>

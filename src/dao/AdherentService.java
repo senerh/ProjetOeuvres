@@ -21,9 +21,24 @@ public class AdherentService {
         }
     }
 
+    public void editAdherent(Adherent adherent) throws MonException {
+        String mysql;
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "UPDATE adherent SET " +
+                    "nom_adherent = '" +adherent.getNomAdherent()+"', " +
+                    "prenom_adherent = '" +adherent.getPrenomAdherent()+"', " +
+                    "ville_adherent = '" +adherent.getVilleAdherent()+"' WHERE id_adherent = " +adherent.getIdAdherent();
+            unDialogueBd.execute(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
+
 
     public Adherent consulterAdherent(int numero) throws MonException {
-        String mysql = "select * from adherent where numero_adherent=" + numero;
+        String mysql = "select * from adherent where id_adherent=" + numero;
         List<Adherent> mesAdh = consulterListeAdherents(mysql);
         if (mesAdh.isEmpty())
             return null;

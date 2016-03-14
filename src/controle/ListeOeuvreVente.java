@@ -13,7 +13,7 @@ import dao.AdherentService;
 import dao.OeuvreVenteService;
 import meserreurs.*;
 
-@WebServlet("/oeuvre/" )
+@WebServlet("/oeuvre/vente" )
 public class ListeOeuvreVente extends HttpServlet {
 
     public ListeOeuvreVente() {

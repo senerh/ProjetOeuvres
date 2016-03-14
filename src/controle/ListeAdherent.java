@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 import dao.AdherentService;
+import form.AdherentForm;
 import meserreurs.*;
 
 @WebServlet("/adherent/" )
@@ -31,4 +32,5 @@ public class ListeAdherent extends HttpServlet {
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/listeAdherent.jsp");
         dispatcher.forward(req, resp);
     }
+
 }
