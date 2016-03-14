@@ -42,6 +42,5 @@
             </c:forEach>
             </tbody>
         </table>
-
 	</jsp:attribute>
 </t:layout>

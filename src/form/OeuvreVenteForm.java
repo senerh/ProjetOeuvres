@@ -1,15 +1,11 @@
 package form;
 
-import dao.AdherentService;
 import dao.OeuvreVenteService;
 import meserreurs.MonException;
-import metier.Adherent;
 import metier.Oeuvrevente;
 import metier.Proprietaire;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

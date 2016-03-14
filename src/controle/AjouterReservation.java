@@ -10,17 +10,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import dao.AdherentService;
 import dao.OeuvreVenteService;
-import dao.ProprietaireService;
-import form.OeuvreVenteForm;
 import form.ReservationForm;
 import meserreurs.*;
 import metier.Adherent;
 import metier.Oeuvrevente;
-import metier.Proprietaire;
 import metier.Reservation;
 
 @WebServlet("/reservation/ajouter" )

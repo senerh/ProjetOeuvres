@@ -12,8 +12,6 @@
 		Ajout Adhérent
 	</jsp:attribute>
 
-
-
 	<jsp:attribute name="body">
         <h1> Ajout d'une reservation </h1>
 

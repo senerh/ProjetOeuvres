@@ -3,10 +3,8 @@ package dao;
 import meserreurs.MonException;
 import metier.Adherent;
 import metier.Oeuvrevente;
-import metier.Proprietaire;
 import metier.Reservation;
 import persistance.DialogueBd;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -14,9 +12,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-/**
- * Created by Nathan on 08/03/2016.
- */
 public class ReservationService {
 
     public Reservation consulterReservation(int id) throws MonException {

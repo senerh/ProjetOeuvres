@@ -3,10 +3,8 @@ package form;
 import dao.AdherentService;
 import meserreurs.MonException;
 import metier.Adherent;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class AdherentForm {

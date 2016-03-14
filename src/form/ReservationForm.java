@@ -1,20 +1,16 @@
 package form;
 
-import dao.AdherentService;
-import dao.OeuvreVenteService;
 import dao.ReservationService;
 import meserreurs.MonException;
 import metier.Adherent;
 import metier.Oeuvrevente;
 import metier.Reservation;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 

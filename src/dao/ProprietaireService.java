@@ -3,7 +3,6 @@ package dao;
 import meserreurs.MonException;
 import metier.Proprietaire;
 import persistance.DialogueBd;
-
 import java.util.ArrayList;
 import java.util.List;
 

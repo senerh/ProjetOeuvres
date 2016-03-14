@@ -3,10 +3,8 @@ package form;
 import dao.ProprietaireService;
 import meserreurs.MonException;
 import metier.Proprietaire;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import javax.servlet.http.HttpServletRequest;
 
 public class ProprietaireForm {
