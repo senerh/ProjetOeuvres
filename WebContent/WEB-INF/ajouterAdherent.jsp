@@ -14,7 +14,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
-        <h1> Ajout d'un adhérent </h1>
+        <h1 class="titrePage"> Ajout d'un adhérent </h1>
 
         <div class="col-xs-8">
 			<c:set var="action" scope="request" value="ajouter"/>

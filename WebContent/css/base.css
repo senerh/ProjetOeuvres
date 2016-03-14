@@ -106,6 +106,17 @@ a:link:hover {
     font-weight: 900;
 }
 
+.navbar-default{
+    background-color: #0f0f0f;
+    z-index: 100;
+    border: 0;
+}
+
+.navbar-collapse a{
+    font-family: Znikomit;
+    font-weight: 900;
+}
+
 #tabAdherents_wrapper .row {
     margin-right: 15px;
     margin-left: 15px;
@@ -122,6 +133,14 @@ a:link:hover {
     max-width: calc(85%- 7em);
     float: right;
     background-color: #ffffff;
+    opacity: 0.9;
+}
+
+.titrePage{
+    text-align: center;
+    font-size: 2em;
+    font-family: Znikomit;
+    color: #2aabd2;
     opacity: 0.9;
 }
 

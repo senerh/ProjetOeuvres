@@ -40,16 +40,15 @@
             <%@include file="/WEB-INF/header.jsp" %>
         </div>
 
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
+        <nav class="navbar navbar-default NoMargin">
+
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuSite" aria-expanded="false">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand">Menu</a>
-                </div>
+
 
                 <div class="collapse navbar-collapse" id="menuSite">
                     <ul class="nav navbar-nav">
