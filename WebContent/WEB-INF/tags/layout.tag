@@ -17,8 +17,9 @@
         <link rel="stylesheet" href="https://cdn.datatables.net/1.10.11/css/dataTables.bootstrap.min.css">
         <script src="https://cdn.datatables.net/1.10.11/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.10.11/js/dataTables.bootstrap.min.js"></script>
-
-
+        
+        <link rel="stylesheet" href="<%=request.getContextPath()%>/lib/calendrier/calendrier.css">
+        <script type="text/javascript" src="<%=request.getContextPath()%>/lib/calendrier/calendrier.js"></script>
 
         <link rel="icon" href="<%=request.getContextPath()%>/images/favicon.ico" />
         <script type="text/javascript" src="<%=request.getContextPath()%>/js/fonctControle.js"></script>

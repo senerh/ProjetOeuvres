@@ -46,6 +46,7 @@
                                class="form-control"
                                id="date" name="date"
                                value="<c:out value="${reservation.date}"/>"
+                               onclick="new calendar(this);"
                                size="20" maxlength="60"
                                placeholder="Entrer date"
                         />
