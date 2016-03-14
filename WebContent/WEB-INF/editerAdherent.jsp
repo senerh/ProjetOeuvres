@@ -17,7 +17,7 @@
         <h1> Editer un adhérent </h1>
 
         <div class="col-xs-8">
-			<c:set var="action" scope="request" value="/adherent/editer?id=${adherent.idAdherent}"/>
+			<c:set var="action" scope="request" value="editer?id=${adherent.idAdherent}"/>
 			<%@include file="/WEB-INF/formAdherent.jsp" %>
         </div>
 	</jsp:attribute>

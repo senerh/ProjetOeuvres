@@ -66,6 +66,6 @@ public class EditerOeuvreVente extends HttpServlet {
         req.setAttribute(ATT_FORM, form);
         req.setAttribute(ATT_OEUVREVENTE, oeuvrevente);
 
-        resp.sendRedirect("/oeuvre/vente");
+        resp.sendRedirect("../../oeuvre/vente");
     }
 }

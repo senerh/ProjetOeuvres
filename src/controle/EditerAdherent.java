@@ -50,6 +50,6 @@ public class EditerAdherent extends HttpServlet {
         req.setAttribute(ATT_FORM, form);
         req.setAttribute(ATT_ADHERENT, adherent);
 
-        resp.sendRedirect("/adherent/");
+        resp.sendRedirect("../adherent/");
     }
 }

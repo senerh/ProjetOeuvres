@@ -17,7 +17,7 @@
         <h1> Editer une oeuvre </h1>
 
         <div class="col-xs-8">
-            <c:set var="action" scope="request" value="/oeuvre/vente/editer?id=${oeuvrevente.idOeuvrevente}"/>
+            <c:set var="action" scope="request" value="editer?id=${oeuvrevente.idOeuvrevente}"/>
             <%@include file="/WEB-INF/formOeuvreVente.jsp" %>
         </div>
 	</jsp:attribute>

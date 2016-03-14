@@ -36,7 +36,7 @@ public class AjouterAdherent extends HttpServlet {
         req.setAttribute(ATT_ADHERENT, adherent);
 
         if(form.getErreurs().isEmpty()) {
-            resp.sendRedirect("/adherent/");
+            resp.sendRedirect("../adherent/");
         }
         else
             this.getServletContext().getRequestDispatcher( "/WEB-INF/ajouterAdherent.jsp" ).forward(req, resp);

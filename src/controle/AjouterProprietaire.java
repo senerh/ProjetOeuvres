@@ -36,7 +36,7 @@ public class AjouterProprietaire extends HttpServlet {
         req.setAttribute(ATT_PROPRIETAIRE, proprietaire);
 
         if(form.getErreurs().isEmpty()) {
-            resp.sendRedirect("/proprietaire/");
+            resp.sendRedirect("../proprietaire/");
         }
         else
             this.getServletContext().getRequestDispatcher( "/WEB-INF/ajouterProprietaire.jsp" ).forward(req, resp);

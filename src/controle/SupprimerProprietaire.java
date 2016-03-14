@@ -28,6 +28,6 @@ public class SupprimerProprietaire extends HttpServlet {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("/proprietaire/");
+        resp.sendRedirect("../proprietaire/");
     }
 }

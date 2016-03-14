@@ -17,7 +17,7 @@
         <h1> Ajout d'une oeuvre </h1>
 
         <div class="col-xs-8">
-            <c:set var="action" scope="request" value="/oeuvre/vente/ajouter"/>
+            <c:set var="action" scope="request" value="ajouter"/>
             <%@include file="/WEB-INF/formOeuvreVente.jsp" %>
         </div>
 	</jsp:attribute>

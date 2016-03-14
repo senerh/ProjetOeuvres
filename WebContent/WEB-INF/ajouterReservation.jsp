@@ -16,7 +16,7 @@
         <h1> Ajout d'une reservation </h1>
 
         <div class="col-xs-8">
-            <form class="form-horizontal" method="post" action="/reservation/ajouter" role="form">
+            <form class="form-horizontal" method="post" action="ajouter" role="form">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="listeAdherent">Propriétaire</label>
                     <div class="col-sm-10">

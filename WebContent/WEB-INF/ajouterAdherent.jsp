@@ -17,7 +17,7 @@
         <h1> Ajout d'un adhérent </h1>
 
         <div class="col-xs-8">
-			<c:set var="action" scope="request" value="/adherent/ajouter"/>
+			<c:set var="action" scope="request" value="ajouter"/>
 			<%@include file="/WEB-INF/formAdherent.jsp" %>
         </div>
 	</jsp:attribute>

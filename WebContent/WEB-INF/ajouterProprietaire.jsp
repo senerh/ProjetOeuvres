@@ -17,7 +17,7 @@
         <h1> Ajout d'un propriétaire </h1>
 
         <div class="col-xs-8">
-            <form class="form-horizontal" method="post" action="/proprietaire/ajouter" role="form">
+            <form class="form-horizontal" method="post" action="ajouter" role="form">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="nom">Nom</label>
                     <div class="col-sm-10">

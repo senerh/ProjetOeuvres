@@ -28,6 +28,6 @@ public class SupprimerAdherent extends HttpServlet {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("/adherent/");
+        resp.sendRedirect("../adherent/");
     }
 }
