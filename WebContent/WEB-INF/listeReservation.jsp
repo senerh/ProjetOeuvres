@@ -13,7 +13,6 @@
 		<table id="tabProprietaires" class="table table-striped table-bordered" cellspacing="0" width="90%">
             <thead>
             <tr>
-                <th>Id</th>
                 <th>Adherent</th>
                 <th>Oeuvre</th>
                 <th>Date</th>
@@ -21,15 +20,12 @@
             </tr>
             </thead>
             <tbody>
-            <c:forEach items="${requestScope.reservation}" var="reservation">
+            <c:forEach items="${requestScope.reservations}" var="reservation">
                 <tr>
-                    <td>${reservation.idReservation}</td>
                     <td>${reservation.adherent.nomAdherent}</td>
                     <td>${reservation.oeuvrevente.titreOeuvrevente}</td>
                     <td>${reservation.date}</td>
-                    <td>
-
-                    </td>
+                    <td></td>
                 </tr>
             </c:forEach>
             </tbody>

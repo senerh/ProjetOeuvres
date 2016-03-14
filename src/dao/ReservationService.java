@@ -44,24 +44,25 @@ public class ReservationService {
             while (index < rs.size()) {
                 Reservation reservation = new Reservation();
 
-                int idAdherent = Integer.parseInt(rs.get(index).toString());
-                Adherent adherent = adherentService.consulterAdherent(idAdherent);
-                reservation.setAdherent(adherent);
-
-                int idOeuvreVente = Integer.parseInt(rs.get(index + 1).toString());
+                int idOeuvreVente = Integer.parseInt(rs.get(index).toString());
                 Oeuvrevente oeuvrevente = oeuvreVenteService.consulterOeuvreVente(idOeuvreVente);
                 reservation.setOeuvrevente(oeuvrevente);
 
+                int idAdherent = Integer.parseInt(rs.get(index + 1).toString());
+                Adherent adherent = adherentService.consulterAdherent(idAdherent);
+                reservation.setAdherent(adherent);
+
                 String date = rs.get(index + 2).toString();
-                DateFormat formatter = new SimpleDateFormat("d-MMM-yyyy,HH:mm:ss aaa");
+                DateFormat formatter = new SimpleDateFormat("yyyy-MM-DD");
                 Date realDate = null;
                 try {
                     realDate = formatter.parse(date);
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
+                reservation.setDate(realDate);
 
-                index = index + 3;
+                index = index + 4;
                 reservations.add(reservation);
             }
 

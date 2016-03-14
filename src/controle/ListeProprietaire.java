@@ -26,8 +26,6 @@ public class ListeProprietaire extends HttpServlet {
             e.printStackTrace();
         }
 
-        System.out.print(req.getAttribute("message"));
-
         RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/listeProprietaire.jsp");
         dispatcher.forward(req, resp);
     }

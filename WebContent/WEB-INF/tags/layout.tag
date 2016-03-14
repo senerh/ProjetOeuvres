@@ -36,56 +36,93 @@
 
     <body class="h100 w100 BackGroundGris NoMargin">
         <div class="backgroundBody"></div>
-            <div id="pageheader">
-                <%@include file="/WEB-INF/header.jsp" %>
-            </div>
+        <div id="pageheader">
+            <%@include file="/WEB-INF/header.jsp" %>
+        </div>
 
-            <div id="menu">
-                <ul class="ulmenu">
-                    <li>
-                        <a href="<c:url value="/adherent/ajouter"> </c:url>">
-                            <p>+ Adhérent</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/adherent/"> </c:url>">
-                            <p>Adherents</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/proprietaire/"> </c:url>">
-                            <p>Proprietaires</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/oeuvre/vente"> </c:url>">
-                            <p>Ventes</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/oeuvre/vente/ajouter"> </c:url>">
-                            <p>+ Oeuvre</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/proprietaire/ajouter"> </c:url>">
-                            <p>+ Proprietaire</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="<c:url value="/reservation/ajouter"> </c:url>">
-                            <p>+ Reservation</p>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menuSite" aria-expanded="false">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Menu</a>
+                </div>
 
-            <div id="body">
-                <jsp:invoke fragment="body"/>
-            </div>
+                <div class="collapse navbar-collapse" id="menuSite">
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown">
+                            <a href=""
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
 
-            <div id="pagefooter">
-                <%@include file="/WEB-INF/footer.jsp" %>
+                                Adherent <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<c:url value="/adherent/"> </c:url>">Liste</a></li>
+                                <li><a href="<c:url value="/adherent/ajouter"> </c:url>">Ajouter</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href=""
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+
+                                Propriétaire <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<c:url value="/proprietaire/"> </c:url>">Liste</a></li>
+                                <li><a href="<c:url value="/proprietaire/ajouter"> </c:url>">Ajouter</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href=""
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+
+                                Oeuvres <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<c:url value="/oeuvre/vente"> </c:url>">Vente</a></li>
+                                <li><a href="<c:url value="/oeuvre/vente/ajouter"> </c:url>">Ajouter</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href=""
+                               class="dropdown-toggle"
+                               data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false">
+
+                                Reservation <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<c:url value="/reservation/"> </c:url>">Vente</a></li>
+                                <li><a href="<c:url value="/reservation/ajouter"> </c:url>">Ajouter</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div id="body">
+            <jsp:invoke fragment="body"/>
+        </div>
+
+        <div id="pagefooter">
+            <%@include file="/WEB-INF/footer.jsp" %>
 
         </div>
 
