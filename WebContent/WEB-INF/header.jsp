@@ -3,5 +3,5 @@
 </div>
 
 <div class="divTitle NoMargin">
-    <h1 class="headerTitle NoMargin Znikomit">Mediatech de Polytech</h1>
+    <h1 class="headerTitle NoMargin Colleged">Mediatech de Polytech</h1>
 </div>

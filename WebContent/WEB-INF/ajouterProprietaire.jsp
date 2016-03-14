@@ -14,7 +14,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
-        <h1> Ajout d'un propriétaire </h1>
+        <h1 class="titrePage"> Ajout d'un propriétaire </h1>
 
         <div class="col-xs-8">
             <form class="form-horizontal" method="post" action="ajouter" role="form">

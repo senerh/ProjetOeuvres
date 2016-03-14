@@ -13,7 +13,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
-        <h1> Ajout d'une reservation </h1>
+        <h1 class="titrePage"> Ajout d'une reservation </h1>
 
         <div class="col-xs-8">
             <form class="form-horizontal" method="post" action="ajouter" role="form">

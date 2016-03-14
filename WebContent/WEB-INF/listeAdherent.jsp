@@ -10,7 +10,8 @@
 		Liste Adhérents
 	</jsp:attribute>
 	<jsp:attribute name="body">
-		<table id="tabAdherents" class="table table-striped table-bordered" cellspacing="0" width="90%">
+		<h1 class="titrePage">Liste des adhérents</h1>
+		<table id="tabProjet" class="table table-striped table-bordered" cellspacing="0" width="100%">
 			<thead>
 				<tr>
 					<th>Id</th>
@@ -34,34 +35,10 @@
 						<a href="<c:url value="/adherent/editer"><c:param name="id" value="${ item.idAdherent }" /></c:url>">
 							<span class="glyphicon glyphicon-edit" aria-hidden="true" ></span>
 						</a>
-						<!--<span class="editForm glyphicon glyphicon-edit"
-							  data-nom="${item.nomAdherent}"
-							  data-prenom="${item.prenomAdherent}"
-							  data-ville="${item.villeAdherent}"
-							  aria-hidden="true"
-							  data-toggle="modal"
-							  data-backdrop="false"
-							  data-target="#myModal">
-						</span>-->
 					</td>
 				</tr>
 			</c:forEach>
 			</tbody>
 		</table>
-
-		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-body">
-						<%@include file="/WEB-INF/formAdherent.jsp" %>
-					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						<button type="button" class="btn btn-primary">Save changes</button>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</jsp:attribute>
 </t:layout>

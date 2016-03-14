@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post" action="${action}">
+<form class="form-horizontal customForm" method="post" action="${action}">
     <div class="form-group">
         <label class="control-label col-sm-2" for="nom">Nom</label>
         <div class="col-sm-10">

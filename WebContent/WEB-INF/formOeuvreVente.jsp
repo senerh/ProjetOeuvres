@@ -1,4 +1,4 @@
-<form class="form-horizontal" method="post" action="${action}" role="form">
+<form class="form-horizontal customForm" method="post" action="${action}" role="form">
     <div class="form-group">
         <label class="control-label col-sm-2" for="titre">Propriétaire</label>
         <div class="col-sm-10">

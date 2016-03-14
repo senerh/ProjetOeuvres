@@ -10,8 +10,8 @@
 		Liste Oeuvre Vente
 	</jsp:attribute>
 	<jsp:attribute name="body">
-        <div class='notifications top-left'></div>
-		<table id="tabProprietaires" class="table table-striped table-bordered" cellspacing="0" width="90%">
+        <h1 class="titrePage">Liste des oeuvres en vente</h1>
+		<table id="tabProjet" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>Id</th>

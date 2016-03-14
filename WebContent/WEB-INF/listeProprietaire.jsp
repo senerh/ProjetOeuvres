@@ -10,7 +10,8 @@
 		Liste Propriétaire
 	</jsp:attribute>
 	<jsp:attribute name="body">
-		<table id="tabProprietaires" class="table table-striped table-bordered" cellspacing="0" width="90%">
+        <h1 class="titrePage">Liste des propriétaires</h1>
+		<table id="tabProjet" class="table table-striped table-bordered" cellspacing="0" width="100%">
             <thead>
             <tr>
                 <th>Id</th>

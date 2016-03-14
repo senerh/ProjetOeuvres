@@ -9,8 +9,18 @@
 }
 
 @font-face {
+    font-family: Colleged;
+    src: url('Colleged.ttf');
+}
+
+.Colleged {
+    font-family: Colleged;
+    letter-spacing: 2px;
+}
+
+@font-face {
     font-family: Znikomit;
-    src: url('Znikomit.otf');
+    src: url('Timeless.ttf');
 }
 
 .Znikomit {
@@ -66,6 +76,7 @@ a:link:hover {
 
 #pageheader {
     height: 20%;
+    min-height: 4em;
     width: 100%;
     border-bottom: 1px solid #cecece;
     background-color: #000000;
@@ -74,7 +85,9 @@ a:link:hover {
 
 #logo {
     width: 15%;
+    min-width: 3em;
     height: 100%;
+    min-height: 3em;
     float: left;
     opacity: 1;
 }
@@ -103,7 +116,6 @@ a:link:hover {
     text-align: center;
     font-size: 40px;
     padding-top: 3%;
-    font-weight: 900;
 }
 
 .navbar-default{
@@ -114,23 +126,25 @@ a:link:hover {
 
 .navbar-collapse a{
     font-family: Znikomit;
-    font-weight: 900;
 }
 
-#tabAdherents_wrapper .row {
-    margin-right: 15px;
-    margin-left: 15px;
+
+#tabProjet_wrapper{
+    width: 80%;
+    margin-left: 10%;
+    padding-bottom: 5%;
 }
 
-#tabProprietaires_wrapper .row {
-    margin-right: 15px;
-    margin-left: 15px;
+#tabProjet_wrapper .row {
+    width: 100%;
+    margin: 0;
+    font-size: 15px;
+    font-family: Znikomit;
 }
 
 #body {
-    height: 65%;
+    min-height: 65%;
     width: 100%;
-    max-width: calc(85%- 7em);
     float: right;
     background-color: #ffffff;
     opacity: 0.9;
@@ -138,10 +152,16 @@ a:link:hover {
 
 .titrePage{
     text-align: center;
-    font-size: 2em;
+    font-size: 2.5em;
     font-family: Znikomit;
     color: #2aabd2;
     opacity: 0.9;
+    padding-bottom: 1em;
+    letter-spacing: 5px;
+}
+
+.customForm{
+    margin-left: 10%;
 }
 
 #pagefooter {
@@ -149,16 +169,34 @@ a:link:hover {
     margin-top: -10%;
     height: 10%;
     clear:both;
+    font-family: Znikomit;
+    font-weight: 300;
+}
+
+.pFooter{
+    padding-top: 1em;
+    font-size: 14px;
+    position: relative;
+    color: #000000;
+    opacity: 0.9;
 }
 
 @media screen and (max-width: 800px) {
     .headerTitle {
-        font-size:20px;
+        font-size:15px;
+    }
+
+    #tabProjet_wrapper{
+        margin-left: 1%;
+    }
+
+    #pageheader {
+        height: 15%;
     }
 }
 
 @media screen and (max-height: 500px) {
     .headerTitle {
-        font-size:20px;
+        font-size:15px;
     }
 }
