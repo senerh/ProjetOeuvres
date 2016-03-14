@@ -22,11 +22,17 @@ public class ProprietaireForm {
         return erreurs;
     }
 
-    public Proprietaire ajouterProprietaire(HttpServletRequest request ) {
-        String nom = getValeurChamp( request, CHAMP_NOM );
-        String prenom = getValeurChamp( request, CHAMP_PRENOM );
+    public Proprietaire ajouterProprietaire(HttpServletRequest request) {
+        return editerProprietaire(request, -1);
+    }
+    
+    public Proprietaire editerProprietaire(HttpServletRequest request, int idProprietaire) {
+        String nom = getValeurChamp(request, CHAMP_NOM);
+        String prenom = getValeurChamp(request, CHAMP_PRENOM);
 
         Proprietaire proprietaire = new Proprietaire();
+        
+        proprietaire.setIdProprietaire(idProprietaire);
 
         try {
             validationNom(nom);
@@ -46,7 +52,11 @@ public class ProprietaireForm {
             ProprietaireService proprietaireService = new ProprietaireService();
 
             try {
-                proprietaireService.insertProprietaire(proprietaire);
+                if (proprietaire.getIdProprietaire() < 0) {
+                    proprietaireService.insertProprietaire(proprietaire);
+                } else {
+                    proprietaireService.editProprietaire(proprietaire);
+                }
             } catch (MonException e) {
                 e.printStackTrace();
             }

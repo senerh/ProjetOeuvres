@@ -1,6 +1,7 @@
 package dao;
 
 import meserreurs.MonException;
+import metier.Adherent;
 import metier.Proprietaire;
 import persistance.DialogueBd;
 import java.util.ArrayList;
@@ -74,6 +75,21 @@ public class ProprietaireService {
             mysql += "'" + ",'" + proprietaire.getPrenomProprietaire() + "')";
 
             unDialogueBd.insertionBD(mysql);
+        } catch (MonException e) {
+            throw e;
+        }
+    }
+    
+    public void editProprietaire(Proprietaire proprietaire) throws MonException {
+        String mysql;
+
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        try {
+            mysql = "UPDATE proprietaire SET " +
+                    "nom_proprietaire = '" + proprietaire.getNomProprietaire() + "', " +
+                    "prenom_proprietaire = '" + proprietaire.getPrenomProprietaire() + "' " +
+                    "WHERE id_proprietaire = " + proprietaire.getIdProprietaire() + ";";
+            unDialogueBd.execute(mysql);
         } catch (MonException e) {
             throw e;
         }

@@ -29,6 +29,9 @@
                         <a href="<c:url value="/proprietaire/supprimer"><c:param name="id" value="${ propritaire.idProprietaire }" /></c:url>">
                             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </a>
+                        <a href="<c:url value="/proprietaire/editer"><c:param name="id" value="${ propritaire.idProprietaire }" /></c:url>">
+                            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
                     </td>
                 </tr>
             </c:forEach>
