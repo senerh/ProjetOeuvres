@@ -164,6 +164,13 @@ a:link:hover {
     letter-spacing: 5px;
 }
 
+.titreIndex{
+    padding-top: 11%;
+    text-align: center;
+    font-family: Znikomit;
+    color: #909090;
+}
+
 .customForm{
     margin-left: 10%;
 }

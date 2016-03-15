@@ -14,7 +14,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
-        <h1>Editer un proprietaire</h1>
+        <h1 class="titrePage">Editer un proprietaire</h1>
 
         <div class="col-xs-8">
 			<c:set var="action" scope="request" value="editer?id=${proprietaire.idProprietaire}"/>

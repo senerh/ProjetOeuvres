@@ -15,7 +15,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
-        <h1>Editer une réservation</h1>
+        <h1 class="titrePage">Editer une réservation</h1>
 
         <div class="col-xs-8">
 			<c:set var="action"

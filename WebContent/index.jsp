@@ -9,7 +9,7 @@
 	</jsp:attribute>
 
 	<jsp:attribute name="body">
-		<h1>Bienvenu</h1>
+		<h1 class="titreIndex">Bienvenue sur la médiatech de Polytech</h1>
 	</jsp:attribute>
 
 </t:layout>

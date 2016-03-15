@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 public class OeuvreVenteForm {
 
     private static final String CHAMP_TITRE = "titre";
-    private static final String CHAMP_ETAT = "etat";
     private static final String CHAMP_PRIX = "prix";
     private static final String CHAMP_LISTE_PROPRIETAIRES = "listeProprietaires";
     private static final String SESSION_PROPRIETAIRE    = "proprietaires";
@@ -32,7 +31,6 @@ public class OeuvreVenteForm {
 
         String idProprietaire = getValeurChamp(request, CHAMP_LISTE_PROPRIETAIRES);
         String titre = getValeurChamp(request, CHAMP_TITRE);
-        String etat = getValeurChamp(request, CHAMP_ETAT);
         String prix = getValeurChamp(request, CHAMP_PRIX);
 
         Oeuvrevente oeuvrevente = new Oeuvrevente();
@@ -52,12 +50,7 @@ public class OeuvreVenteForm {
         }
         oeuvrevente.setTitreOeuvrevente(titre);
 
-        try {
-            validationEtat(etat);
-        } catch ( Exception e ) {
-            setErreur( CHAMP_ETAT, e.getMessage());
-        }
-        oeuvrevente.setEtatOeuvrevente(etat);
+        oeuvrevente.setEtatOeuvrevente("L");
 
         float valeurPrix = -1;
         try {

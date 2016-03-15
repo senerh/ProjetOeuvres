@@ -6,6 +6,7 @@ import dao.ReservationService;
 import meserreurs.MonException;
 import metier.Adherent;
 import metier.Oeuvrevente;
+import metier.Proprietaire;
 import metier.Reservation;
 import java.text.DateFormat;
 import java.text.ParseException;
@@ -18,8 +19,8 @@ import javax.servlet.http.HttpSession;
 
 public class ReservationForm {
 
-    private static final String CHAMP_LISTE_ADHERENT  = "adherent";
-    private static final String CHAMP_LISTE_OEUVREVENTE   = "oeuvrevente";
+    private static final String CHAMP_LISTE_ADHERENTS  = "adherent";
+    private static final String CHAMP_LISTE_OEUVREVENTES   = "oeuvrevente";
     private static final String CHAMP_DATE   = "date";
     private static final String CHAMP_UPDATED_ADHERENT   = "id-adherent-origin";
     private static final String CHAMP_UPDATED_OEUVREVENTE = "id-oeuvrevente-origin";
@@ -48,30 +49,23 @@ public class ReservationForm {
     }
     
     private Reservation insertOrUpdateReservation(HttpServletRequest request, int updatedIdAdherent, int updatedIdOeuvrevente) {
-        String idAdherent = getValeurChamp(request, CHAMP_LISTE_ADHERENT);
-        String idOeuvreVente = getValeurChamp(request, CHAMP_LISTE_OEUVREVENTE);
+        String idAdherent = getValeurChamp(request, CHAMP_LISTE_ADHERENTS);
+        String idOeuvreVente = getValeurChamp(request, CHAMP_LISTE_OEUVREVENTES);
         String date = getValeurChamp(request, CHAMP_DATE);
+
+        HttpSession session = request.getSession();
 
         Reservation reservation = new Reservation();
 
-        Adherent adherent = null;
-        HttpSession session = request.getSession();
-        AdherentService adherentService = new AdherentService();
-        OeuvreVenteService oeuvreVenteService = new OeuvreVenteService();
-        try {
-            adherent = adherentService.consulterAdherent(Integer.parseInt(idAdherent));
-        } catch (NumberFormatException | MonException e2) {
-            // TODO Auto-generated catch block
-            e2.printStackTrace();
-        }
+        System.out.print(idAdherent);
+
+        Adherent adherent;
+        adherent = ((Map<String, Adherent>) session.getAttribute( SESSION_ADHERENT )).get(idAdherent);
         reservation.setAdherent(adherent);
 
-        Oeuvrevente oeuvreVente = null;
-        try {
-            oeuvreVente = oeuvreVenteService.consulterOeuvreVente(Integer.parseInt(idOeuvreVente));
-        } catch (NumberFormatException | MonException e1) {
-            e1.printStackTrace();
-        }
+
+        Oeuvrevente oeuvreVente;
+        oeuvreVente = ((Map<String, Oeuvrevente>) session.getAttribute( SESSION_OEUVREVENTE )).get(idOeuvreVente);
         reservation.setOeuvrevente(oeuvreVente);
 
         DateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");

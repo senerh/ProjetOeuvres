@@ -4,8 +4,8 @@
         <div class="col-sm-10">
             <select class="form-control" name="adherent" id="listeAdherent">
                 <option value="${reservation.adherent.idAdherent}">${reservation.adherent.nomAdherent}</option>
-                <c:forEach items="${reservations}" var="r">
-                    <option value="${ r.adherent.idAdherent }">${ r.adherent.nomAdherent }</option>
+                <c:forEach items="${ sessionScope.adherents }" var="r">
+                    <option value="${ r.value.idAdherent }">${ r.value.nomAdherent }</option>
                 </c:forEach>
             </select>
         </div>
@@ -15,8 +15,8 @@
         <div class="col-sm-10">
             <select class="form-control" name="oeuvrevente" id="listeOeuvre">
                 <option value="${reservation.oeuvrevente.idOeuvrevente}">${reservation.oeuvrevente.titreOeuvrevente}</option>
-                <c:forEach items="${ reservations }" var="r">
-                    <option value="${ r.oeuvrevente.idOeuvrevente }">${ r.oeuvrevente.titreOeuvrevente }</option>
+                <c:forEach items="${ sessionScope.oeuvreventes }" var="r">
+                    <option value="${ r.value.idOeuvrevente }">${ r.value.titreOeuvrevente }</option>
                 </c:forEach>
             </select>
         </div>
@@ -36,6 +36,7 @@
     
     <input type="hidden" id="id-adherent-origin" name="id-adherent-origin" value="<c:out value="${reservation.adherent.idAdherent}"/>" />
     <input type="hidden" id="id-oeuvrevente-origin" name="id-oeuvrevente-origin" value="<c:out value="${reservation.oeuvrevente.idOeuvrevente}"/>" />
-    
+
+    <p> ${form.erreurs['formulaire']} </p>
     <p class="${empty form.erreurs ? 'succes' : 'erreur'}">${form.resultat}</p>
 </form>

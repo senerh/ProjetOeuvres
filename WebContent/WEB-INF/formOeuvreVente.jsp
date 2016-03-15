@@ -3,7 +3,7 @@
         <label class="control-label col-sm-2" for="titre">Propriétaire</label>
         <div class="col-sm-10">
             <select class="form-control" name="listeProprietaires" id="listeProprietaires">
-                <option value="">${ oeuvrevente.proprietaire.prenomProprietaire } ${ oeuvrevente.proprietaire.nomProprietaire }</option>
+                <option value="${ oeuvrevente.proprietaire.idProprietaire }">${ oeuvrevente.proprietaire.prenomProprietaire } ${ oeuvrevente.proprietaire.nomProprietaire }</option>
                 <c:forEach items="${ sessionScope.proprietaires }" var="mapProprietaires">
                     <option value="${ mapProprietaires.value.idProprietaire }">${ mapProprietaires.value.prenomProprietaire } ${ mapProprietaires.value.nomProprietaire }</option>
                 </c:forEach>
@@ -21,19 +21,6 @@
                    placeholder="Entrer titre"
             />
             <span>${form.erreurs['titre']}</span>
-        </div>
-    </div>
-    <div class="form-group">
-        <label class="control-label col-sm-2" for="etat">Etat</label>
-        <div class="col-sm-10">
-            <input type="text"
-                   class="form-control"
-                   id="etat" name="etat"
-                   value="<c:out value="${oeuvrevente.etatOeuvrevente}"/>"
-                   size="20" maxlength="60"
-                   placeholder="Entrer etat"
-            />
-            <span>${form.erreurs['etat']}</span>
         </div>
     </div>
     <div class="form-group">
