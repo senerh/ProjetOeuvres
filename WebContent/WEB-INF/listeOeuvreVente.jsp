@@ -31,8 +31,8 @@
                     <td>${oeuvre.prixOeuvrevente}</td>
                     <td>${oeuvre.proprietaire.nomProprietaire}</td>
                     <td>
-                        <a href="<c:url value="/oeuvre/vente/supprimer"><c:param name="id" value="${ oeuvre.idOeuvrevente }" /></c:url>">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                        <a href="<c:url value="/oeuvre/vente/supprimer"><c:param name="id" value="${ oeuvre.idOeuvrevente }" /></c:url>" class="deleteA">
+                            <span class="confirmation glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </a>
                         <a href="<c:url value="/oeuvre/vente/editer"><c:param name="id" value="${ oeuvre.idOeuvrevente }" /></c:url>">
                             <span class="glyphicon glyphicon-edit" aria-hidden="true" ></span>

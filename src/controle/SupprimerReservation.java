@@ -6,7 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import dao.ProprietaireService;
+import dao.OeuvreVenteService;
+import dao.ReservationService;
 import meserreurs.*;
 
 @WebServlet("/reservation/supprimer" )
@@ -19,9 +20,16 @@ public class SupprimerReservation extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        int id = Integer.parseInt(req.getParameter("id"));
-        ProprietaireService proprietaireService = new ProprietaireService();
+        int idAdherent = Integer.parseInt(req.getParameter("id-adherent"));
+        int idOeuvrevente = Integer.parseInt(req.getParameter("id-oeuvrevente"));
+        ReservationService reservationService = new ReservationService();
 
-        resp.sendRedirect("../proprietaire/");
+        try {
+            reservationService.supprimerReservation(idAdherent, idOeuvrevente);
+        } catch (MonException e) {
+            e.printStackTrace();
+        }
+
+        resp.sendRedirect("../../reservation/");
     }
 }

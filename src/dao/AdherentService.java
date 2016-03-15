@@ -11,13 +11,12 @@ public class AdherentService {
     public void supprimerAdherent(int idAdherent) throws MonException {
         String mysql;
 
+        ReservationService reservationService = new ReservationService();
+        reservationService.supprimerReservationAdherent(idAdherent);
         DialogueBd unDialogueBd = DialogueBd.getInstance();
-        try {
-            mysql = "DELETE FROM adherent WHERE id_adherent = " + idAdherent;
-            unDialogueBd.execute(mysql);
-        } catch (MonException e) {
-            throw e;
-        }
+        mysql = "DELETE FROM adherent WHERE id_adherent = " + idAdherent;
+        unDialogueBd.execute(mysql);
+
     }
 
     public void editAdherent(Adherent adherent) throws MonException {

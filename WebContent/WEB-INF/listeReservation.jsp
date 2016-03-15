@@ -29,10 +29,17 @@
                     <td>
                         <a href="
                         <c:url value="/reservation/editer">
-                        <c:param name="id-oeuvrevente" value="${ reservation.oeuvrevente.idOeuvrevente }" />
-                        <c:param name="id-adherent" value="${ reservation.adherent.idAdherent }" />
+                            <c:param name="id-oeuvrevente" value="${ reservation.oeuvrevente.idOeuvrevente }" />
+                            <c:param name="id-adherent" value="${ reservation.adherent.idAdherent }" />
                         </c:url>">
                                 <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                        </a>
+                        <a href="
+                        <c:url value="/reservation/supprimer">
+                            <c:param name="id-oeuvrevente" value="${ reservation.oeuvrevente.idOeuvrevente }" />
+                            <c:param name="id-adherent" value="${ reservation.adherent.idAdherent }" />
+                        </c:url>">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                         </a>
                     </td>
                 </tr>

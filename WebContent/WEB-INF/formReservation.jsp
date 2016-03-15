@@ -1,6 +1,6 @@
 <form class="form-horizontal" method="post" action="${action}" role="form">
     <div class="form-group">
-        <label class="control-label col-sm-2" for="listeAdherent">Propriétaire</label>
+        <label class="control-label col-sm-2" for="listeAdherent">AdhÃ©rent</label>
         <div class="col-sm-10">
             <select class="form-control" name="adherent" id="listeAdherent">
                 <option value="${reservation.adherent.idAdherent}">${reservation.adherent.nomAdherent}</option>

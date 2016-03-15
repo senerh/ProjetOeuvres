@@ -94,6 +94,8 @@ public class ReservationService {
                     + ",(" + mysql2 + "))";
 
             unDialogueBd.insertionBD(mysql);
+            OeuvreVenteService oeuvreVenteService = new OeuvreVenteService();
+            oeuvreVenteService.editEtatOeuvreVente("R", reservation.getOeuvrevente().getIdOeuvrevente());
         } catch (MonException e) {
             throw e;
         }
@@ -124,15 +126,26 @@ public class ReservationService {
     }
 
 
-    public void supprimerReservation(int idReservation) throws MonException {
+    public void supprimerReservation(int idAdherent, int idOeuvrevente) throws MonException {
         String mysql;
-
         DialogueBd unDialogueBd = DialogueBd.getInstance();
-        try {
-            mysql = "DELETE FROM reservation WHERE id_reservation = " + idReservation;
-            unDialogueBd.execute(mysql);
-        } catch (MonException e) {
-            throw e;
-        }
+        mysql = "DELETE FROM reservation WHERE id_adherent = " + idAdherent + " and id_oeuvrevente = "+idOeuvrevente;
+        unDialogueBd.execute(mysql);
+        OeuvreVenteService oeuvreVenteService = new OeuvreVenteService();
+        oeuvreVenteService.editEtatOeuvreVente("L", idOeuvrevente);
+    }
+
+    public void supprimerReservation(int idOeuvrevente) throws MonException {
+        String mysql;
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        mysql = "DELETE FROM reservation WHERE id_oeuvrevente = "+idOeuvrevente;
+        unDialogueBd.execute(mysql);
+    }
+
+    public void supprimerReservationAdherent(int idAdherent) throws MonException {
+        String mysql;
+        DialogueBd unDialogueBd = DialogueBd.getInstance();
+        mysql = "DELETE FROM reservation WHERE id_adherent = "+idAdherent;
+        unDialogueBd.execute(mysql);
     }
 }

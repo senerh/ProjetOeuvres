@@ -12,14 +12,10 @@ public class ProprietaireService {
 
     public void supprimerProprietaire(int idProprietaire) throws MonException {
         String mysql;
-
         DialogueBd unDialogueBd = DialogueBd.getInstance();
-        try {
-            mysql = "DELETE FROM proprietaire WHERE id_proprietaire = " + idProprietaire;
-            unDialogueBd.execute(mysql);
-        } catch (MonException e) {
-            throw e;
-        }
+
+        mysql = "DELETE FROM proprietaire WHERE id_proprietaire = " + idProprietaire;
+        unDialogueBd.execute(mysql);
     }
 
 

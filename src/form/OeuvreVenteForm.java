@@ -87,20 +87,23 @@ public class OeuvreVenteForm {
     }
 
 
-    private void validationTitre( String titre ) throws Exception {
+    private void validationTitre(String titre ) throws Exception {
         if ( titre != null && titre.length() < 3 ) {
             throw new Exception( "Le titre doit contenir au moins 3 caractères." );
         }
     }
 
-    private void validationEtat( String etat) throws Exception {
+    private void validationEtat(String etat) throws Exception {
         if ( etat != null && etat.length() < 0 ) {
-            throw new Exception( "" );
+            throw new Exception( "Veuillez rentrer un etat" );
+        }
+        if (etat != null && !(etat.equals("L") || etat.equals("R"))) {
+            throw new Exception( "Veuillez rentrer un etat correspondant a L ou R" );
         }
     }
 
 
-    private float validationPrix( String prix ) throws Exception {
+    private float validationPrix(String prix) throws Exception {
         float temp;
         if ( prix != null ) {
             try {

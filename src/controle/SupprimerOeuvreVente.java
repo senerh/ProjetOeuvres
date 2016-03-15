@@ -28,6 +28,6 @@ public class SupprimerOeuvreVente extends HttpServlet {
             e.printStackTrace();
         }
 
-        resp.sendRedirect("../../adherent/");
+        resp.sendRedirect("../../oeuvre/vente");
     }
 }

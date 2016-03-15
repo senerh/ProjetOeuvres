@@ -57,7 +57,11 @@ public class AjouterOeuvreVente extends HttpServlet {
         req.setAttribute(ATT_FORM, form);
         req.setAttribute(ATT_OEUVREVENTE, oeuvrevente);
 
-        resp.sendRedirect("../../oeuvre/vente");
+        if(form.getErreurs().isEmpty()) {
+            resp.sendRedirect("../../oeuvre/vente");
+        }
+        else
+            this.getServletContext().getRequestDispatcher( "/WEB-INF/ajouterOeuvreVente.jsp" ).forward(req, resp);
     }
 }
 

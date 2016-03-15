@@ -71,6 +71,10 @@ public class AjouterReservation extends HttpServlet {
         req.setAttribute(ATT_FORM, form);
         req.setAttribute(ATT_RESERVATION, reservation);
 
-        this.getServletContext().getRequestDispatcher( "/WEB-INF/ajouterOeuvreVente.jsp" ).forward(req, resp);
+        if(form.getErreurs().isEmpty()) {
+            resp.sendRedirect("../reservation/");
+        }
+        else
+            this.getServletContext().getRequestDispatcher( "/WEB-INF/ajouterReservation.jsp" ).forward(req, resp);
     }
 }
